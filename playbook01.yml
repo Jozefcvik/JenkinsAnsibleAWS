@@ -1,0 +1,11 @@
+- hosts: servers
+  become: yes
+  tasks:
+
+    - name: "Update Cache"
+      apt:
+        update_cache: yes
+
+    - name: "Show Current Hostname"
+      ansible.builtin.command: hostname
+      register: hostname_result
