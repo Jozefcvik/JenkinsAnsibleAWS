@@ -2,6 +2,8 @@
 skorocel
 # PUSH TEST
 
+## HURA NOW IT WILL WORKS
+
 ## NEW PUSH TEST
 
 # EC2 Jenkins Server Setup (Ubuntu EC2 t2.micro)
