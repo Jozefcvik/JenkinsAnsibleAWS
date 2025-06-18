@@ -1,10 +1,4 @@
 # JenkinsAnsibleAWS
-skorocel
-# PUSH TEST
-## the best feel ever
-## HURA NOW IT WILL WORKS
-
-## NEW PUSH TEST
 
 # EC2 Jenkins Server Setup (Ubuntu EC2 t2.micro)
 
@@ -35,4 +29,36 @@ skorocel
   sudo systemctl enable jenkins
 	sudo systemctl start jenkins
 
+#### GITHUB PUSH TO JENKINS
+
+GitHub 
+ - generate Developer token (classic)
+
+Jenkins
+ - add generated token to Manage Jenkins \ Credentials
+
+Github
+ - in the repository
+ - Settings
+ - Webhooks
+  - payload url: http://52.59.251.11:8080/github-webhook/
+  - content type:application/x-www-form-urlencoded
+  - Enable SSL verification
+  - Update Webhook
+  - PING should be success
+
+Jenkins
+ - freestyle job
+ - source code management
+  - repository URL: https://github.com/Jozefcvik/JenkinsAnsibleAWS.git
+  - credentials: none
+ - triggers: GitHub hook trigger for GITScm polling
+ - Build Steps:
+  - Invoke Ansible Playbook:
+    - Ansible
+    - /ansible/JenkinsAnsibleAWS/playbook01.yml
+    - file or host list - /ansible/JenkinsAnsibleAWS/hosts
+    - credentials: root
+
+SAVE 
 
