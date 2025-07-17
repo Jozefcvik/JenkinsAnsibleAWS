@@ -31,11 +31,28 @@
 
 #### GITHUB PUSH TO JENKINS
 
-GitHub 
- - generate Developer token (classic)
 
-Jenkins
- - add generated token to Manage Jenkins \ Credentials
+
+https://www.youtube.com/watch?v=jSm0YZ-NQAc
+GitHub - Personal Access Token
+ - General Settings
+   - Developer Settings
+     - Personal access tokens
+       - Generate new Token (classic)
+
+add generated PAK to Jenkins
+  - Manage Jenkins
+    - configure System
+      - GitHub section  (GIT and GitHub plugins are installed as recommended)
+        - GitHub Server
+          - name: GitHub
+          - API URL: https://api.github.com	(was already set by default)
+          - credentials
+            - Add
+              - secret text
+                - secret - copy personal PAT from GitHub
+            - select PAT
+           - Manage hooks - disable  (we will set GitHub push)
 
 Github
  - in the repository
