@@ -31,8 +31,6 @@
 
 #### GITHUB PUSH TO JENKINS
 
-
-
 https://www.youtube.com/watch?v=jSm0YZ-NQAc
 GitHub - Personal Access Token
  - General Settings
